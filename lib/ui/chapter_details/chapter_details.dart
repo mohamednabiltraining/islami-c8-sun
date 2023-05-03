@@ -16,7 +16,8 @@ class _ChapterDetailsScreenState extends State<ChapterDetailsScreen> {
   Widget build(BuildContext context) {
     var args =
         ModalRoute.of(context)?.settings.arguments as ChapterDetailsScreenArgs;
-    readFile(args.index);
+    if (verses.isEmpty) readFile(args.index);
+
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
@@ -58,7 +59,7 @@ class _ChapterDetailsScreenState extends State<ChapterDetailsScreen> {
     String fileName = 'assets/files/${index + 1}.txt';
     String fileContent = await rootBundle.loadString(fileName);
     verses = fileContent.split('\n');
-    await Future.delayed(Duration(seconds: 3));
+    print(fileContent);
     setState(() {});
   }
 }
