@@ -126,19 +126,16 @@ class QuranTab extends StatelessWidget {
         Expanded(
             flex: 1, child: Image.asset('assets/images/quran_top_image.png')),
         Container(
-          color: Theme.of(context).primaryColor,
+          color: Theme.of(context).colorScheme.secondary,
           height: 2,
           width: double.infinity,
           margin: EdgeInsets.only(bottom: 4),
         ),
         Text(
           'Chapter Name',
-          style: TextStyle(
-            fontSize: 24,
-          ),
-        ),
+            style: Theme.of(context).textTheme.headline5),
         Container(
-          color: Theme.of(context).primaryColor,
+          color: Theme.of(context).colorScheme.secondary,
           height: 2,
           width: double.infinity,
           margin: EdgeInsets.only(top: 4),
@@ -152,7 +149,7 @@ class QuranTab extends StatelessWidget {
               itemCount: names.length,
               separatorBuilder: (buildContext, index) {
                 return Container(
-                  color: Theme.of(context).primaryColor,
+                  color: Theme.of(context).colorScheme.secondary,
                   height: 1,
                   width: double.infinity,
                   margin: EdgeInsets.symmetric(horizontal: 48),

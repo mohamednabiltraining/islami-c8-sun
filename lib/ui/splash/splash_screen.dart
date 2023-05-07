@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami_c8_sun/ui/MyTheme.dart';
 import 'package:islami_c8_sun/ui/home/home_screen.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -14,7 +15,9 @@ class SplashScreen extends StatelessWidget {
     });
     return Scaffold(
       body: Image.asset(
-        'assets/images/splash_background.png',
+        MyTheme.isDarkEnabled
+            ? 'assets/images/dark_splash.png'
+            : 'assets/images/splash_background.png',
         fit: BoxFit.fill,
         width: double.infinity,
         height: double.infinity,
