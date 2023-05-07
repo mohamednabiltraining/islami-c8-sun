@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami_c8_sun/ui/MyTheme.dart';
 import 'package:islami_c8_sun/ui/home/hadeth/hadeth_tab.dart';
 import 'package:islami_c8_sun/ui/home/quran/quran_tab.dart';
 import 'package:islami_c8_sun/ui/home/radio/radio_tab.dart';
@@ -19,7 +20,9 @@ class _HomeScreenState extends State<HomeScreen> {
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/images/main_background.png'),
+              image: AssetImage(MyTheme.isDarkEnabled
+                  ? 'assets/images/dark_background.png'
+                  : 'assets/images/main_background.png'),
               fit: BoxFit.fill)),
       child: Scaffold(
           appBar: AppBar(
