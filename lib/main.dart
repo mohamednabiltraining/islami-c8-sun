@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:islami_c8_sun/ui/MyTheme.dart';
 import 'package:islami_c8_sun/ui/chapter_details/chapter_details.dart';
 import 'package:islami_c8_sun/ui/hadeth_details/hadeth_details_screen.dart';
@@ -15,8 +17,23 @@ class MyApplication extends StatelessWidget {
     return MaterialApp(
       theme: MyTheme.lightTheme,
       darkTheme: MyTheme.darkTheme,
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.dark,
       initialRoute: SplashScreen.routeName,
+      localizationsDelegates: [
+        AppLocalizations.delegate, // Add this line
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        Locale(
+          'en',
+        ), // English
+        Locale(
+          'ar',
+        ), // Spanish
+      ],
+      locale: Locale('ar'),
       routes: {
         SplashScreen.routeName: (buildContext) => SplashScreen(),
         HomeScreen.routeName: (buildContext) => HomeScreen(),

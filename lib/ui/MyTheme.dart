@@ -6,12 +6,13 @@ class MyTheme {
   static const Color lightAccentColor = Color(0xFFB7935F);
   static const Color darkAccentColor = Color(0xFFFACC1D);
   static final ThemeData lightTheme = ThemeData(
+      cardColor: Colors.white,
       accentColor: lightPrimaryColor,
-      textTheme: TextTheme(
+      textTheme: const TextTheme(
           headline5: TextStyle(fontSize: 24, color: Colors.black),
           bodyText1: TextStyle(fontSize: 20, color: Colors.black)),
       progressIndicatorTheme:
-          ProgressIndicatorThemeData(color: lightPrimaryColor),
+          const ProgressIndicatorThemeData(color: lightPrimaryColor),
       primaryColor: lightPrimaryColor,
       scaffoldBackgroundColor: Colors.transparent,
       appBarTheme: const AppBarTheme(
@@ -21,13 +22,14 @@ class MyTheme {
           centerTitle: true,
           titleTextStyle: TextStyle(
               color: Colors.black, fontSize: 32, fontWeight: FontWeight.w500)),
-      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: lightPrimaryColor,
         selectedItemColor: Colors.black,
         unselectedItemColor: Colors.white,
       ));
   static final ThemeData darkTheme = ThemeData(
-      textTheme: TextTheme(
+      cardColor: darkPrimaryColor,
+      textTheme: const TextTheme(
           headline5: TextStyle(fontSize: 24, color: Colors.white),
           bodyText1: TextStyle(fontSize: 20, color: Colors.white)),
       progressIndicatorTheme:
@@ -42,10 +44,10 @@ class MyTheme {
           centerTitle: true,
           titleTextStyle: TextStyle(
               color: Colors.white, fontSize: 32, fontWeight: FontWeight.w500)),
-      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: darkPrimaryColor,
         selectedItemColor: darkAccentColor,
         unselectedItemColor: Colors.white,
       ));
-  static bool isDarkEnabled = false;
+  static bool isDarkEnabled = true;
 }

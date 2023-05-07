@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami_c8_sun/ui/MyTheme.dart';
 import 'package:islami_c8_sun/ui/home/hadeth/hadeth_tab.dart';
 
 class HadethDetailsScreen extends StatelessWidget {
@@ -10,7 +11,9 @@ class HadethDetailsScreen extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/images/main_background.png'),
+              image: AssetImage(MyTheme.isDarkEnabled
+                  ? 'assets/images/dark_background.png'
+                  : 'assets/images/main_background.png'),
               fit: BoxFit.fill)),
       child: Scaffold(
         appBar: AppBar(
@@ -22,7 +25,6 @@ class HadethDetailsScreen extends StatelessWidget {
               child: Card(
                 elevation: 24,
                 margin: EdgeInsets.symmetric(horizontal: 12, vertical: 48),
-                color: Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(24),
                 ),
@@ -30,9 +32,7 @@ class HadethDetailsScreen extends StatelessWidget {
                   child: Text(
                     args.content,
                     textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 20,
-                    ),
+                    style: Theme.of(context).textTheme.bodyText1,
                   ),
                 ),
               ),
