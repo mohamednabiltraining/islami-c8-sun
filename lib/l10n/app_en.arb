@@ -4,5 +4,10 @@
   "hadeth": "Hadeth",
   "tasbeh": "Mention",
   "radio": "Radio",
-  "chapter_name": "Chapter Name"
+  "chapter_name": "Chapter Name",
+  "settings": "Settings",
+  "language": "Language",
+  "theme": "Theme",
+  "dark": "Dark",
+  "light": "Light"
 }
