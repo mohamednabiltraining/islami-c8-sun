@@ -1,31 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:islami_c8_sun/providers/settings_provider.dart';
 import 'package:islami_c8_sun/ui/MyTheme.dart';
 import 'package:islami_c8_sun/ui/chapter_details/chapter_details.dart';
 import 'package:islami_c8_sun/ui/hadeth_details/hadeth_details_screen.dart';
 import 'package:islami_c8_sun/ui/home/home_screen.dart';
 import 'package:islami_c8_sun/ui/splash/splash_screen.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MyApplication());
+  runApp(ChangeNotifierProvider(
+      create: (buildContext) => SettingsProvider(), child: MyApplication()));
 }
 
 class MyApplication extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<SettingsProvider>(context);
     return MaterialApp(
       theme: MyTheme.lightTheme,
       darkTheme: MyTheme.darkTheme,
-      themeMode: ThemeMode.dark,
+      themeMode: provider.theme,
       initialRoute: SplashScreen.routeName,
-      localizationsDelegates: [
+      localizationsDelegates: const [
         AppLocalizations.delegate, // Add this line
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      supportedLocales: [
+      supportedLocales: const [
         Locale(
           'en',
         ), // English
@@ -33,7 +37,7 @@ class MyApplication extends StatelessWidget {
           'ar',
         ), // Spanish
       ],
-      locale: Locale('ar'),
+      locale: Locale(provider.languageCode),
       routes: {
         SplashScreen.routeName: (buildContext) => SplashScreen(),
         HomeScreen.routeName: (buildContext) => HomeScreen(),

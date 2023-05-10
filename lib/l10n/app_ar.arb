@@ -4,5 +4,10 @@
   "hadeth": "الحديث",
   "tasbeh": "التسبيح",
   "radio": "الإذاعه",
-  "chapter_name": "اسم السوره"
+  "chapter_name": "اسم السوره",
+  "settings": "الاعدادات",
+  "language": "اللغه",
+  "theme": "السمه",
+  "dark": "داكن",
+  "light": "مضئ"
 }

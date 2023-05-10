@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:islami_c8_sun/ui/MyTheme.dart';
+import 'package:islami_c8_sun/providers/settings_provider.dart';
 import 'package:islami_c8_sun/ui/chapter_details/verse_item.dart';
+import 'package:provider/provider.dart';
 
 class ChapterDetailsScreen extends StatefulWidget {
   static const routeName = 'chapter-details';
@@ -15,6 +16,8 @@ class _ChapterDetailsScreenState extends State<ChapterDetailsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<SettingsProvider>(context);
+
     var args =
         ModalRoute.of(context)?.settings.arguments as ChapterDetailsScreenArgs;
     if (verses.isEmpty) readFile(args.index);
@@ -22,9 +25,7 @@ class _ChapterDetailsScreenState extends State<ChapterDetailsScreen> {
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage(MyTheme.isDarkEnabled
-                  ? 'assets/images/dark_background.png'
-                  : 'assets/images/main_background.png'),
+              image: AssetImage(provider.getBackGroundImage()),
               fit: BoxFit.fill)),
       child: Scaffold(
         appBar: AppBar(
@@ -33,26 +34,26 @@ class _ChapterDetailsScreenState extends State<ChapterDetailsScreen> {
         body: verses.isEmpty
             ? Center(child: CircularProgressIndicator())
             : Card(
-                elevation: 24,
-                margin: EdgeInsets.symmetric(horizontal: 12, vertical: 48),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(24),
-                ),
-                child: ListView.separated(
-                  itemBuilder: (buildContext, index) {
-                    return VerseItem(verses[index], index + 1);
-                  },
-                  itemCount: verses.length,
-                  separatorBuilder: (_, __) {
-                    return Container(
-                      color: Theme.of(context).accentColor,
-                      width: double.infinity,
-                      height: 1,
-                      margin: EdgeInsets.symmetric(horizontal: 48),
-                    );
-                  },
-                ),
-              ),
+          elevation: 24,
+          margin: EdgeInsets.symmetric(horizontal: 12, vertical: 48),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(24),
+          ),
+          child: ListView.separated(
+            itemBuilder: (buildContext, index) {
+              return VerseItem(verses[index], index + 1);
+            },
+            itemCount: verses.length,
+            separatorBuilder: (_, __) {
+              return Container(
+                color: Theme.of(context).accentColor,
+                width: double.infinity,
+                height: 1,
+                margin: EdgeInsets.symmetric(horizontal: 48),
+              );
+            },
+          ),
+        ),
       ),
     );
   }
