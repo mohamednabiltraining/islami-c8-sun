@@ -26,7 +26,7 @@ class ChapterNameWidget extends StatelessWidget {
         alignment: Alignment.center,
         child: Text(
           '$name',
-          style: TextStyle(fontSize: 24),
+          style: Theme.of(context).textTheme.headline6,
         ),
       ),
     );

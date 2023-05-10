@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:islami_c8_sun/ui/home/hadeth/hadeth.dart';
 
+import '../mythemdata.dart';
+
 class HadethDetails extends StatelessWidget{
   static const String routeName ='hadethdetails';
 
@@ -10,7 +12,9 @@ class HadethDetails extends StatelessWidget{
 
     return Container(
       decoration: BoxDecoration(
-        image: DecorationImage(image: AssetImage('assets/images/main_background.png'),
+        image: DecorationImage(image: AssetImage(MyThemData.themeMode==ThemeMode.light?
+        'assets/images/main_background.png':
+        'assets/images/darkbg.jpg'),
             fit: BoxFit.fill),
       ),
       child: Scaffold(
@@ -21,13 +25,11 @@ class HadethDetails extends StatelessWidget{
           children: [
             Expanded(child: Card(
               child: SingleChildScrollView(
-                child: Text(args.content,style: TextStyle(
-                  fontSize: 20
-                ),textAlign: TextAlign.center),
+                child: Text(args.content,style:Theme.of(context).textTheme.bodyText2,
+                    textAlign: TextAlign.center),
               ),
               elevation: 24,
               margin: EdgeInsets.symmetric(horizontal: 12, vertical: 48),
-              color: Colors.white,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(24),
               ),

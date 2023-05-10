@@ -24,19 +24,17 @@ class _HadethTabState extends State<HadethTab> {
           height: 2, width: double.infinity,
           color: Theme
               .of(context)
-              .primaryColor,
+              .accentColor,
           margin: EdgeInsets.only(bottom: 4),
         ),
         Text(
           'Ahadeth',
-          style: TextStyle(
-            fontSize: 24,
-          ),
+          style: Theme.of(context).textTheme.headline3,
         ),
         Container(
           color: Theme
               .of(context)
-              .primaryColor,
+              .accentColor,
           height: 2,
           width: double.infinity,
           margin: EdgeInsets.only(top: 4),
@@ -48,7 +46,7 @@ class _HadethTabState extends State<HadethTab> {
               return HadethTitleWidget(allHadeth[index]);
             }, itemCount: allHadeth.length, separatorBuilder: (buildContext, index) {
               return Container(
-                color: Theme.of(context).primaryColor,
+                color: Theme.of(context).accentColor,
                 height: 1,
                 width: double.infinity,
                 margin: EdgeInsets.symmetric(horizontal: 48),
