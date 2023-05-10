@@ -1,14 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami_c8_sun/ui/chapter_details/chapter_details.dart';
 
-class Ahmed {
-  @override
-  String toString() {
-    // TODO: implement toString
-    return super.toString();
-  }
-}
-
 class ChapterNameWidget extends StatelessWidget {
   String name;
   int index;
