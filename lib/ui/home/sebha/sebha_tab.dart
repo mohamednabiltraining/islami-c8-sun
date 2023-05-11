@@ -39,7 +39,7 @@ class _SebhaTabState extends State<SebhaTab> {
           ),
           SizedBox(height: 20,),
           Container(
-            child: Text(sebha(), textAlign: TextAlign.center,style: TextStyle(
+            child: Text(tasbeh(), textAlign: TextAlign.center,style: TextStyle(
               fontSize: 25
             )),
             width: 138, height: 52,
@@ -50,8 +50,8 @@ class _SebhaTabState extends State<SebhaTab> {
       ),
     );
   }
-  String sebha (){
-  final random = new Random();
+  String tasbeh (){
+  final random = Random();
   var i = random.nextInt(tasbeeh.length);
   return tasbeeh[i];
 }
