@@ -4,6 +4,8 @@ import 'package:islami_c8_sun/ui/home/quran/quran_tab.dart';
 import 'package:islami_c8_sun/ui/home/radio/radio_tab.dart';
 import 'package:islami_c8_sun/ui/home/sebha/sebha_tab.dart';
 
+import '../mythemdata.dart';
+
 class HomeScreen extends StatefulWidget {
   static const String routeName = 'home';
 
@@ -19,7 +21,11 @@ class _HomeScreenState extends State<HomeScreen> {
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/images/main_background.png'),
+              image: AssetImage(
+                  MyThemData.themeMode==ThemeMode.light?
+                  'assets/images/main_background.png':
+                  'assets/images/darkbg.jpg'
+              ),
               fit: BoxFit.fill)),
       child: Scaffold(
           appBar: AppBar(
