@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:islami_c8_sun/ui/chapter_details/chapter_details.dart';
 import 'package:islami_c8_sun/ui/hadeth_details/hadethdetails.dart';
 import 'package:islami_c8_sun/ui/home/home_screen.dart';
 import 'package:islami_c8_sun/ui/mythemdata.dart';
 import 'package:islami_c8_sun/ui/splash/splash_screen.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
   runApp(MyApplication());
@@ -25,6 +27,17 @@ class MyApplication extends StatelessWidget {
         HadethDetails.routeName: (BuildContext)=> HadethDetails(),
 
       },
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        Locale('en'), // English
+        Locale('ar'), // Arabic
+      ],
+      locale: Locale('ar'),
     );
   }
 }

@@ -3,6 +3,7 @@ import 'package:islami_c8_sun/ui/home/hadeth/hadeth_tab.dart';
 import 'package:islami_c8_sun/ui/home/quran/quran_tab.dart';
 import 'package:islami_c8_sun/ui/home/radio/radio_tab.dart';
 import 'package:islami_c8_sun/ui/home/sebha/sebha_tab.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../mythemdata.dart';
 
@@ -29,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
               fit: BoxFit.fill)),
       child: Scaffold(
           appBar: AppBar(
-            title: Text('Islami'),
+            title: Text(AppLocalizations.of(context)!.islami ),
           ),
           bottomNavigationBar: BottomNavigationBar(
             currentIndex: selectedIndex,
@@ -42,19 +43,19 @@ class _HomeScreenState extends State<HomeScreen> {
               BottomNavigationBarItem(
                   backgroundColor: Theme.of(context).primaryColor,
                   icon: ImageIcon(AssetImage('assets/images/ic_quran.png')),
-                  label: 'Quran'),
+                  label: AppLocalizations.of(context)!.quran),
               BottomNavigationBarItem(
                   backgroundColor: Theme.of(context).primaryColor,
                   icon: ImageIcon(AssetImage('assets/images/ic_hadeth.png')),
-                  label: 'Hadeth'),
+                  label: AppLocalizations.of(context)!.ahadeth),
               BottomNavigationBarItem(
                   backgroundColor: Theme.of(context).primaryColor,
                   icon: ImageIcon(AssetImage('assets/images/ic_sebha.png')),
-                  label: 'Sebha'),
+                  label: AppLocalizations.of(context)!.sebha),
               BottomNavigationBarItem(
                   backgroundColor: Theme.of(context).primaryColor,
                   icon: ImageIcon(AssetImage('assets/images/ic_radio.png')),
-                  label: 'Radio'),
+                  label: AppLocalizations.of(context)!.radio),
             ],
           ),
           body: tabs[selectedIndex]),

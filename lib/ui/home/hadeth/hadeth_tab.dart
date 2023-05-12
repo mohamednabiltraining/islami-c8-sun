@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami_c8_sun/ui/home/hadeth/hadeth.dart';
 import 'package:islami_c8_sun/ui/home/hadeth/hadethtitle.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HadethTab extends StatefulWidget {
   @override
@@ -27,8 +28,7 @@ class _HadethTabState extends State<HadethTab> {
               .accentColor,
           margin: EdgeInsets.only(bottom: 4),
         ),
-        Text(
-          'Ahadeth',
+        Text( AppLocalizations.of(context)!.ahadeth,
           style: Theme.of(context).textTheme.headline3,
         ),
         Container(
