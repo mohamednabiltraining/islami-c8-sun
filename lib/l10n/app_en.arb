@@ -4,6 +4,11 @@
   "ahadeth" : "Ahadeth",
   "sebha" : "Sebha",
   "radio" : "Radio",
-  "quran" : "Quran"
+  "quran" : "Quran",
+  "settings" : "Settings",
+  "theme" : "Theme",
+  "language" : "Language",
+  "dark" : "Dark",
+  "light" : "Light"
 
 }

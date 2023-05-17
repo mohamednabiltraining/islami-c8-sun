@@ -90,5 +90,5 @@ class MyThemData {
     ),
   );
 
-  static ThemeMode themeMode = ThemeMode.dark ;
+  // static ThemeMode themeMode = ThemeMode.light ;
 }

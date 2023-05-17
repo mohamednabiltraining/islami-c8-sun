@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:islami_c8_sun/providers/settingprovider.dart';
 import 'package:islami_c8_sun/ui/home/home_screen.dart';
 import 'package:islami_c8_sun/ui/mythemdata.dart';
+import 'package:provider/provider.dart';
 
 class SplashScreen extends StatelessWidget {
   static const String routeName = 'splash';
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<SettingProvider>(context);
     Future.delayed(
         Duration(
           seconds: 3,
@@ -15,9 +18,7 @@ class SplashScreen extends StatelessWidget {
     });
     return Scaffold(
       body: Image.asset(
-        MyThemData.themeMode==ThemeMode.light?
-        'assets/images/splash_background.png':
-        'assets/images/darksplash.jpg',
+        provider.getBackGroundImage(),
         fit: BoxFit.fill,
         width: double.infinity,
         height: double.infinity,

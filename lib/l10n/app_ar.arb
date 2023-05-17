@@ -2,8 +2,13 @@
   "islami": "اسلامى",
   "chapter_Name" : "اسم السورة",
   "ahadeth" : "الاحاديث",
-  "sebha" : "السيحة",
+  "sebha" : "السبحة",
   "radio" : "الاذاعة",
-  "quran" : "القران"
+  "quran" : "القران",
+  "settings" : "الاعدادات",
+  "theme" : "السمات",
+  "language" : "اللغة",
+  "dark" : "داكن",
+  "light" : "فاتح"
 
 }
